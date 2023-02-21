@@ -1,20 +1,130 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PageController!{% endblock %}
+{% block title %}PlayGe{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+ <!-- Carrusel con instrucciones-->
+  <div class="container">
+    <div id="carouselExampleControls" class="carousel slide mx-auto mt-3 mb-3"  style="height: 30vh" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" >
+          <img src="https://source.unsplash.com/random/100x80?sig=1" style="height: 30vh" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item " >
+          <img src="https://source.unsplash.com/random/100x80?sig=2" style="height: 30vh" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" >
+          <img src="https://source.unsplash.com/random/100x80?sig=3" style="height: 30vh" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- Fin del carrusel-->
+  <!-- Cartas estaticas -->
+  <div class="container">
+    <div class="row">
+        <div class=" col-12 col-sm-6 col-lg-4">
+          <div class="card mb-3 bg-dark">
+            <a href="juegoBomba.html"><img src="{{ asset('css/imgs/Minesweeper.png') }}" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title text-light">Minas</h5>
+            </div>
+          </div>
+        </div>
+        <div class=" col-12 col-sm-6 col-lg-4">
+          <div class="card mb-3 bg-dark">
+            <a href="crash.html"><img src="..." class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title text-light">Crash</h5>
+            </div>
+          </div>
+        </div>
+        <div class=" col-12 col-sm-6 col-lg-4">
+          <div class="card mb-3 bg-dark">
+            <img src="css/imgs/towers.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-light">Towers</h5>
+            
+            </div>
+          </div>
+        </div>
+        <div class=" col-12 col-sm-6 col-lg-6 ">
+          <div class="card mb-3 bg-dark">
+            <img src="css/imgs/ruleta.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-light">Ruleta</h5>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            </div>
+          </div>
+        </div>
+        <div class=" col-12 col-sm-12 col-lg-6 ">
+          <div class="card w-100 mb-3 bg-dark">
+            <img src="css/imgs/Jankenpo.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-light">Piedra papel o tijera</h5>
+ 
+            </div>
+          </div>
+        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/alumno/Escritorio/ProyectoFinal/PlayGe/src/Controller/PageController.php'|file_link(0) }}">src/Controller/PageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/alumno/Escritorio/ProyectoFinal/PlayGe/templates/page/index.html.twig'|file_link(0) }}">templates/page/index.html.twig</a></code></li>
-    </ul>
-</div>
+      </div>
+      <!-- Fin de las cartas estaticas-->
+      <div class=" col-12">
+        <div class="card w-100 mb-3 bg-dark">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-light">Tower Defense</h5>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Jugadas Destacadas o Jugadores destacados-->
+
+      <div class=" col-12">
+        <div class="card w-100 mb-3 bg-dark ">
+          <h4 class="card-title text-light mt-1 mb-1 justify-content-center mx-auto text-center">Jugadas destacadas</h4>
+          <div class="card-body ganancias">
+
+            <div class="mensaje-resultados col-12 border-bottom border-light mt-3">
+              <div class="row">
+                  <div class="col-4">
+                    <p class="text-light">nombre de usuario</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-light">juego</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-light">resultado</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="mensaje-resultados col-12 border-bottom border-light mt-3">
+              <div class="row">
+                  <div class="col-4">
+                    <p class="text-light">nombre de usuario</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-light">juego</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-light">resultado</p>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    <!-- fin de destacados -->
+  </div>
 {% endblock %}

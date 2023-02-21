@@ -15,4 +15,12 @@ class PageController extends AbstractController
             'controller_name' => 'PageController',
         ]);
     }
+
+    #[Route('/gamebomb', name: 'bombs')]
+    public function bombs(): Response
+    {
+        return $this->render('page/gamebombs.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
 }
