@@ -13,7 +13,7 @@ $(document).ready(function(){
             $(this).css('background-color', 'yellow');
             $(this).html("Empezar juego")
             $(".boton-torre").prop('disabled', true);
-        
+            multiplicador=1
             x=29
             $(".boton-torre").css('background-image','url("")')
         }else{

@@ -23,4 +23,20 @@ class PageController extends AbstractController
             'controller_name' => 'PageController',
         ]);
     }
+
+    #[Route('/crash', name: 'crash')]
+    public function crash(): Response
+    {
+        return $this->render('page/crash.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
+
+    #[Route('/towers', name: 'towers')]
+    public function towers(): Response
+    {
+        return $this->render('page/towers.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
 }

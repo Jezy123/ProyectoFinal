@@ -24,7 +24,10 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                'attr' => ['type' =>"password",
+                            'class'=>"form-control",
+                            'id'=>"registroContrasena",
+                            'placeholder'=>"Contraseña"],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',
@@ -36,6 +39,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+                
             ])
         ;
     }
