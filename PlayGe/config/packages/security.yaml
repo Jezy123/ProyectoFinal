@@ -33,6 +33,11 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/gamebomb, roles: ROLE_USER }
+        - { path: ^/crash, roles: ROLE_USER }
+        - { path: ^/towers, roles: ROLE_USER }
+
+
 
 when@test:
     security:
