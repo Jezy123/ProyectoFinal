@@ -1,12 +1,10 @@
 window.onload=function(){
 
-    var formulario=document.getElementById('formularioRegistro');
-    var registroContraseña=document.getElementById('registroContrasena');
-    registroContraseña.addEventListener('keyup',seguridad);
-    formulario.addEventListener('submit',comprobar);
-    document.getElementById('registroNombre').focus();
 
-    document.addEventListener("contextmenu",cancelar);
+    var registroContraseña=document.getElementById('registration_form_plainPassword');
+    registroContraseña.addEventListener('keyup',seguridad);
+
+
 }
 
 function seguridad(){
@@ -40,41 +38,3 @@ function seguridad(){
 
 }
 
-
-
-function comprobar(event){
-    var txt=document.getElementById('seguridad').innerHTML;
-    if (txt=='Segura'){
-        var registroNombre=document.getElementById('registroNombre');
-        var registroApellido=document.getElementById('registroEmail');
-        var registroTefono=document.getElementById('registroTelefono');
-
-        var contenido="";
-
-        if(registroNombre.value=='' || registroNombre.value==null){
-        contenido = "Debes introducir algun nombre.\n"
-        }
-        
-        if(registroEmail.value=='' || registroEmail.value==null){
-            contenido =contenido + "Debes introducir algun apellido.\n";
-        }
-        if(!(/^\d{9}$/.test(registroTefono.value))){
-            contenido= contenido + "Debes intrducir un numero de telefono valido.\n"
-        }
-        
-        if(!(contenido=="")){
-            alert(contenido)
-            event.preventDefault()
-        }
-    }else{
-        alert('La contraseña no es segura')
-        event.preventDefault()
-    }
-
-
-
-}
-
-function cancelar(event){
-    event.preventDefault();
-}

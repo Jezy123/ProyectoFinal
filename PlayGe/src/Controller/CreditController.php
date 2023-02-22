@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route(path:'/game')]
-class ApiController extends AbstractController
+
+class CreditController extends AbstractController
 {
-    #[Route('/win/{id}/{ganar}', name: 'winGame',  methods: ['POST'])]
+    #[Route('/win/{id}/{ganar}', name: 'winGame',  methods: ['GET'])]
     public function win(ManagerRegistry $doctrine, $ganar ,$id): JsonResponse
     {
         $repository = $doctrine->getRepository(User::class);
@@ -22,7 +22,7 @@ class ApiController extends AbstractController
         return new JsonResponse($user -> getCreditos(), Response::HTTP_OK);
     }
 
-    #[Route('/lose/{id}/{perder}', name: 'loseGame',  methods: ['POST'])]
+    #[Route('/lose/{id}/{perder}', name: 'loseGame',  methods: ['GET'])]
     public function lose(ManagerRegistry $doctrine, $perder ,$id): JsonResponse
     {
         $repository = $doctrine->getRepository(User::class);

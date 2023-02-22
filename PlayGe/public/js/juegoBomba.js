@@ -12,9 +12,9 @@ $(document).ready(function(){
     $(".empieza-bombas").on("click",function(){
       
         if($(this).html()=="Retirar dinero"){
-
-            $.getJSON( `/game/win/${$('.userinfo').data("id")}/${$()}`,function(data){
-
+            var totalCreditos=Math.round((creditos*multiplicador)*100)/100;
+            $.getJSON( `/win/${$('.userinfo').data("id")}/${totalCreditos}`,function(data){
+                console.log('crack')
             })
             $(this).css('background-color', 'yellow');
             $(this).html("Empezar juego")

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}PlayGe{% endblock %}
+
+{% block body %}
+ <script src="js/plugin/roulette.js"></script>
+<body>
+
+    <div class="container">
+        <div class="row mt-4 bg-dark mx-0" data-user-id="{{app.user.id}}">
+            <div class="col-12 col-sm-4 mt-4 mb-4">
+
+                <small class="form-text text-light">Apuesta</small>
+
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button">Button</button>
+                    </div>
+
+                    <input type="number" class="form-control inputCreditoTowers"  min="1" max="30000" value="1" >
+
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary multiplicaCreditos" type="button" value="1.5">X 1.5</button>
+                        <button class="btn btn-outline-secondary multiplicaCreditos" type="button" value="2">X 2</button>
+                    </div>
+
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button class="btn btn-large btn-primary start"> START </button>
+				    <button class="stop btn-large btn btn-warning"> STOP </button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 mt-4 mb-4">
+                <div class="roulette" style="display:none;"> 
+                    <img src="http://example.com/star.png"/>
+                    <img src="http://example.com/flower.png"/>
+                    <img src="http://example.com/coin.png"/>
+                    <img src="http://example.com/mshroom.png"/>
+                    <img src="http://example.com/chomp.png"/>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock %}

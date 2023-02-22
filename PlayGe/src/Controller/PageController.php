@@ -39,4 +39,14 @@ class PageController extends AbstractController
             'controller_name' => 'PageController',
         ]);
     }
+
+    #[Route('/roulette', name: 'roulette')]
+    public function roulette(): Response
+    {
+        return $this->render('page/roulette.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
+
+    
 }
