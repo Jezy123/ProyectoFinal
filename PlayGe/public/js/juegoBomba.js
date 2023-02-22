@@ -13,6 +13,9 @@ $(document).ready(function(){
       
         if($(this).html()=="Retirar dinero"){
 
+            $.getJSON( `/game/win/${$('.userinfo').data("id")}/${$()}`,function(data){
+
+            })
             $(this).css('background-color', 'yellow');
             $(this).html("Empezar juego")
             $(".boton-bomba").prop('disabled', true);
