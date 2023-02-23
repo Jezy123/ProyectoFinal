@@ -36,6 +36,7 @@ security:
         - { path: ^/gamebomb, roles: ROLE_USER }
         - { path: ^/crash, roles: ROLE_USER }
         - { path: ^/towers, roles: ROLE_USER }
+        - { path: ^/roulette, roles: ROLE_USER }
 
 
 

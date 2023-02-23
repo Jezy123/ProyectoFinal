@@ -67,3 +67,7 @@ body{
     height: 40px;
     box-shadow: 1px 1px 1px #fffc60;
 }
+
+.imagenRoulette{
+    height: 30vh;
+}

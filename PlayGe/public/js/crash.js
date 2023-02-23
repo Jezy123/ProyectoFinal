@@ -15,6 +15,10 @@ $(document).ready(function(){
     $(".empieza-crash").on("click",function(){
         $(".empieza-crash").prop('disabled', true);
         $(".mantener-crash").prop('disabled', false);
+
+        $.getJSON( `/lose/${$('.userinfo').data("id")}/${ $(".inputCredito").val()*100}`,function(data){
+            $(".creditosUsuario").html(data.toFixed(2))
+        })
         $(".inputCredito").prop('disabled', false);
 
         multiplicador=0
@@ -33,12 +37,12 @@ $(document).ready(function(){
         $(".mantener-crash").prop('display', false);
         console.log("arriba")
         multiplicador=miNumero/100;
-        $(".muestraDelResultado").html( $(".inputCredito").val()+" X " +multiplicador)
-        $.post("../php/quitarCantidad.css",{ cantidad : multiplicador},function(){
-            console.log('valores enviados')
-        })
-        .done(function(){
 
+        $(".muestraDelResultado").html( $(".inputCredito").val()+" X " +multiplicador)
+        var creditosSumar=($(".inputCredito").val())*multiplicador*100
+
+        $.getJSON( `/win/${$('.userinfo').data("id")}/${creditosSumar}`,function(data){
+            $(".creditosUsuario").html(data.toFixed(2))
         })
         
     })

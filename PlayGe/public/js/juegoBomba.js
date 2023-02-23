@@ -12,10 +12,12 @@ $(document).ready(function(){
     $(".empieza-bombas").on("click",function(){
       
         if($(this).html()=="Retirar dinero"){
-            var totalCreditos=Math.round((creditos*multiplicador)*100)/100;
+            var totalCreditos=Math.round((creditos*multiplicador)*100);
+
             $.getJSON( `/win/${$('.userinfo').data("id")}/${totalCreditos}`,function(data){
-                console.log('crack')
+                $(".creditosUsuario").html(data.toFixed(2))
             })
+
             $(this).css('background-color', 'yellow');
             $(this).html("Empezar juego")
             $(".boton-bomba").prop('disabled', true);
@@ -33,24 +35,25 @@ $(document).ready(function(){
             $(".masBombas").prop('disabled',false)
 
             var resultado= Math.round((creditos*multiplicador)*100)/100
-            $.post("sacarCreditos.php",{ Ingresar : resultado},function(){
-                console.log("enviado")
-            })
-            .done(function(){
-                console.log("finalizado")
-            })
+         
 
 
         }else{
+
+
             $(".boton-bomba").prop('disabled', false);
             $(this).css('background-color', '#a6ff00');
             $(this).html("Retirar dinero");
             numeroDeBombas=$(".inputBombas").val()
             $(".inputBombas").prop('disabled', true);
             creditos=$(".inputCreditoBombas").val();
-            $(".inputCreditoBombas").prop('disabled', true);
+         
 
-           
+            $.getJSON( `/lose/${$('.userinfo').data("id")}/${(creditos*100)}`,function(data){
+                $(".creditosUsuario").html(data.toFixed(2))
+            })
+
+            $(".inputCreditoBombas").prop('disabled', true);
             $(".boton-bomba").css('background-image', 'url("./css/imgs/logowebb.svg")');
             $(".boton-bomba").prop('disabled', false);
             $(".multiplicaCreditos").prop('disabled',true)
