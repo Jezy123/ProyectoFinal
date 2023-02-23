@@ -12,6 +12,7 @@ $(document).ready(function(){
     $(".empieza-bombas").on("click",function(){
       
         if($(this).html()=="Retirar dinero"){
+
             var totalCreditos=Math.round((creditos*multiplicador)*100);
 
             $.getJSON( `/win/${$('.userinfo').data("id")}/${totalCreditos}`,function(data){
@@ -87,7 +88,7 @@ $(document).ready(function(){
                     $(this).css('background-image', 'url("./css/imgs/coin.svg")');
                 }
             })
-
+            multiplicador=0
             $(".boton-bomba").prop('disabled', true);
             $(".resultado-bombas").html(creditos+" X "+ "0  =  0")
 
