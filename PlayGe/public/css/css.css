@@ -10,6 +10,7 @@ body{
 .mensaje-resultados{
     height: 50px !important;
 }
+
 .boton-bomba{
     background-image: url("./imgs/logowebb.svg");
     background-position:center;

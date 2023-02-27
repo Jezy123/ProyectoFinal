@@ -50,7 +50,7 @@
         </div>
         <div class=" col-12 col-sm-6 col-lg-3">
           <div class="card mb-3 bg-dark">
-            <a href="{{ path('towers') }}"><img src="css/imgs/towers.png" class="card-img-top" alt="..."></a>
+            <a href="{{ path('towers') }}"><img src="{{ asset('css/imgs/towers.png') }}"class="card-img-top" alt="..."></a>
             <div class="card-body">
               <h5 class="card-title text-light">Towers</h5>
             </div>
@@ -58,7 +58,7 @@
         </div>
         <div class=" col-12 col-sm-6 col-lg-3 ">
           <div class="card mb-3 bg-dark">
-            <a href="{{ path('roulette') }}"><img src="css/imgs/ruleta.png" class="card-img-top" alt="..."></a>
+            <a href="{{ path('roulette') }}"><img src="{{ asset('css/imgs/ruleta.png') }}" class="card-img-top" alt="..."></a>
             <div class="card-body">
               <h5 class="card-title text-light">Ruleta</h5>
 
@@ -67,7 +67,7 @@
         </div>
         <div class=" col-12 col-sm-12 col-lg-6 ">
           <div class="card w-100 mb-3 bg-dark">
-            <img src="css/imgs/Jankenpo.png" class="card-img-top" alt="...">
+            <img src="{{ asset('css/imgs/Jankenpo.png') }}"class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-light">Piedra papel o tijera</h5>
  
@@ -79,7 +79,7 @@
       <!-- Fin de las cartas estaticas-->
         <div class=" col-12 col-sm-12 col-lg-6">
           <div class="card w-100 mb-3 bg-dark">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{{ asset('css/imgs/hunter.png') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title text-light">Tower Defense</h5>
             </div>
@@ -127,4 +127,5 @@
       </div>
     <!-- fin de destacados -->
   </div>
+
 {% endblock %}
